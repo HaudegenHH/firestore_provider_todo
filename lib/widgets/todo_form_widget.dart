@@ -37,7 +37,7 @@ class TodoFormWidget extends StatelessWidget {
         onChanged: onChangedTitle,
         validator: (title) {
           if (title!.isEmpty) {
-            return "Cant be empty!";
+            return "The title cannot be empty!";
           } else {
             return null;
           }
@@ -52,13 +52,15 @@ class TodoFormWidget extends StatelessWidget {
         initialValue: description,
         maxLines: 3,
         onChanged: onChangedDescription,
+        /*
         validator: (description) {
           if (description!.isEmpty) {
-            return "Cant be empty!";
+            return "The description cannot be empty!";
           } else {
             return null;
           }
         },
+        */
         decoration: const InputDecoration(
           border: UnderlineInputBorder(),
           labelText: 'Description',

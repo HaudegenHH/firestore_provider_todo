@@ -1,5 +1,6 @@
 import 'package:firestore_todo/main.dart';
 import 'package:firestore_todo/widgets/add_todo_dialog_widget.dart';
+import 'package:firestore_todo/widgets/completed_list_widget.dart';
 import 'package:firestore_todo/widgets/todo_list_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -17,13 +18,13 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final tabs = [
       const TodoListWidget(),
-      Container(),
+      const CompletedListWidget(),
     ];
 
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(MyApp.title),
+        title: const Text(MyApp.title),
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Theme.of(context).primaryColor,

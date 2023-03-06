@@ -1,5 +1,6 @@
 import 'package:firestore_todo/main.dart';
 import 'package:firestore_todo/widgets/add_todo_dialog_widget.dart';
+import 'package:firestore_todo/widgets/todo_list_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,7 +15,10 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final tabs = [Container(), Container()];
+    final tabs = [
+      const TodoListWidget(),
+      Container(),
+    ];
 
     return Scaffold(
       appBar: AppBar(
@@ -44,14 +48,14 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () => showDialog(
           context: context,
-          builder: (BuildContext context) => AddTodoDialogWidget(),
+          builder: (BuildContext context) => const AddTodoDialogWidget(),
           //barrierDismissible: false,
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
         backgroundColor: Colors.black,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
